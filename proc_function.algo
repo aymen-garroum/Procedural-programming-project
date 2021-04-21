@@ -1,0 +1,102 @@
+//PROBLEMS RESOLVED FOR 2D VECTORS, VECTOR IN STRUCT FORMAT {x,y}, ARRAY FORMAT [{x1, y1}, {x2, y2}...]
+
+
+PROCEDURE dot_product(v1, v2 : ARRAY_OF FLOAT[2])
+
+VAR ps : FLOAT;
+
+BEGIN
+
+    Read(v1);
+    Read(v2);
+
+    ps := v1[0]*v2[0] + v1[1]*v2[1];
+
+    Write(ps);
+
+END
+
+
+ALGORITHM vector_calculus
+
+VAR vector_obj : STRUCT
+    x : FLOAT;
+    y : FLOAT;
+END_STRUCT
+
+VAR vector_array : ARRAY_OF vector_obj[];
+
+VAR i,j : INTEGER := 0;
+VAR s_product : FLOAT;
+    
+BEGIN
+
+    Write("Write a set of 2D vector coordinates as [(x1,y1), (x2,y2)...]");
+    Read(vector_array);
+
+    FOR i FROM 0 TO vector_array.length-1 STEP 1 DO
+        FOR j FROM 0 TO vector_array.length-1 STEP 1  DO
+
+            s_product := dot_product(vector_array[i],vector_array[j];
+
+            IF (i <> j) THEN
+                IF (s_product = 0) THEN
+                    Write(vector_array[i] + " and " vector_array[j] + " are orthogonal.");
+                END_IF
+            END_IF
+        END_FOR
+    END_FOR
+
+END
+
+
+FUNCTION dot_product_f(VAR v1, v2 : ARRAY_OF FLOAT[2]) : FLOAT
+
+VAR ps : FLOAT;
+    
+BEGIN
+
+    Read(v1);
+    Read(v2);
+
+    ps := v1[0]*v2[0] + v1[1]*v2[1];
+
+    RETURN ps ;
+END
+
+
+ALGORITHM vector_calculus_function
+
+VAR vector_obj : STRUCT
+    x : FLOAT;
+    y : FLOAT;
+END_STRUCT
+
+VAR vector_array : ARRAY_OF vector_obj[];
+
+VAR i,j : INTEGER := 0;
+VAR s_product : FLOAT;
+    
+BEGIN
+
+    Write("Write a set of 2D vector coordinates as [(x1,y1), (x2,y2)...]");
+    Read(vector_array);
+
+    FOR i FROM 0 TO vector_array.length-1 STEP 1 DO
+        FOR j FROM 0 TO vector_array.length-1 STEP 1  DO
+
+            s_product := dot_product_f(vector_array[i],vector_array[j];
+
+            IF (i <> j) THEN
+                IF (s_product = 0) THEN
+                    Write(vector_array[i] + " and " vector_array[j] + " are orthogonal.");
+                END_IF
+            END_IF
+        END_FOR
+    END_FOR
+
+END
+
+
+
+
