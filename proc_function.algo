@@ -34,8 +34,8 @@ BEGIN
     Write("Write a set of 2D vector coordinates as [(x1,y1), (x2,y2)...]");
     Read(vector_array);
 
-    FOR i FROM 0 TO vector_array.length-1 STEP 1 DO
-        FOR j FROM 0 TO vector_array.length-1 STEP 1  DO
+    FOR i FROM 0 TO vector_array.length-2 STEP 1 DO
+        FOR j FROM i+1 TO vector_array.length-1 STEP 1  DO
 
             s_product := dot_product(vector_array[i],vector_array[j];
 
@@ -82,8 +82,8 @@ BEGIN
     Write("Write a set of 2D vector coordinates as [(x1,y1), (x2,y2)...]");
     Read(vector_array);
 
-    FOR i FROM 0 TO vector_array.length-1 STEP 1 DO
-        FOR j FROM 0 TO vector_array.length-1 STEP 1  DO
+    FOR i FROM 0 TO vector_array.length-2 STEP 1 DO
+        FOR j FROM i+1 TO vector_array.length-1 STEP 1  DO
 
             s_product := dot_product_f(vector_array[i],vector_array[j];
 
